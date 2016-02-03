@@ -2,7 +2,7 @@
   "name": "node-wmsigner",
   "author": "George Skarbovskiy <george.skarbovskiy@gmail.com>",
   "description": "WMSigner node port",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "build/Release/node-wmsigner",
   "directories": {
     "lib": "./build/Release"

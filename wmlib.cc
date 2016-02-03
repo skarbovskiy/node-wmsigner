@@ -57,4 +57,4 @@ void Init(Local<Object> exports) {
       Nan::New<v8::FunctionTemplate>(sign)->GetFunction());
 }
 
-NODE_MODULE(wmsigner, Init)
+NODE_MODULE(node_wmsigner, Init)
