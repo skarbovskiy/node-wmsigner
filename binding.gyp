@@ -1,0 +1,22 @@
+{  
+   "targets":[  
+      {  
+         "target_name":"wmsigner",
+         "include_dirs":[  
+            "wmsigner-2.0.3",
+            "libev-4.15",
+            "libeio-master-modified"
+         ],
+         "sources":[  
+            "wmsigner-2.0.3/base64.cpp",
+            "wmsigner-2.0.3/cmdbase.cpp",
+            "wmsigner-2.0.3/crypto.cpp",
+            "wmsigner-2.0.3/md4.cpp",
+            "wmsigner-2.0.3/rsalib1.cpp",
+            "wmsigner-2.0.3/signer.cpp",
+            "wmsigner-2.0.3/wmsigner.cpp",
+            "wmlib.cc"
+         ]
+      }
+   ]
+}
