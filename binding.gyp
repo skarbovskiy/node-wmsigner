@@ -1,8 +1,9 @@
 {  
    "targets":[  
       {  
-         "target_name":"wmsigner",
-         "include_dirs":[  
+         "target_name":"node-wmsigner",
+         "include_dirs":[
+            "<!(node -e \"require('nan')\")",
             "wmsigner-2.0.3",
             "libev-4.15",
             "libeio-master-modified"

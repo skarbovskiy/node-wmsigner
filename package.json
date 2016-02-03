@@ -1,13 +1,16 @@
 {
-   "name":"node-wmsigner",
-   "author":"George Skarbovskiy <george.skarbovskiy@gmail.com>",
-   "description":"WMSigner node port",
-   "version":"1.0.0",
-   "main":"build/Release/wmsigner",
-   "directories":{
-      "lib":"./build/Release"
-   },
-   "engines":{
-      "node":">=0.10.x"
-   }
+  "name": "node-wmsigner",
+  "author": "George Skarbovskiy <george.skarbovskiy@gmail.com>",
+  "description": "WMSigner node port",
+  "version": "1.1.0",
+  "main": "build/Release/node-wmsigner",
+  "directories": {
+    "lib": "./build/Release"
+  },
+  "engines": {
+    "node": ">=0.10.x"
+  },
+  "dependencies": {
+    "nan": "~2.2.0"
+  }
 }

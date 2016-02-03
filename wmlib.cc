@@ -5,6 +5,7 @@
 #include <ev.h>
 #include <eio.h>
 #include <fcntl.h>
+#include <nan.h>
 #include "stdafx.h"
 #include "stdio.h"
 #include "signer.h"
@@ -19,9 +20,8 @@ void NormStr(char *str);
 
 static char pszOut[MAXBUF + 1] = "";
 
-Handle<Value> sign(const Arguments& args)
+void sign(const Nan::FunctionCallbackInfo<Value>& args)
 {
-	HandleScope scope;
 	char szBufforInv[MAXSTR+1] = "";
 	int ErrorCode = 0;
 	bool result = FALSE;
@@ -45,16 +45,16 @@ Handle<Value> sign(const Arguments& args)
 	ErrorCode = sign.ErrorCode();
 	if (result) {
 		strncpy(pszOut, szSign, MAXSTR);
-		return scope.Close(String::New((char*) pszOut));
+		args.GetReturnValue().Set(Nan::New(pszOut).ToLocalChecked());
 	} else {
 		sprintf(pszOut, "WMSigner Error: %d\n", ErrorCode);
-		return scope.Close(ThrowException(Exception::Error(String::New(pszOut))));
+		Nan::ThrowError(pszOut);
 	}
 }
 
-void Init(Handle<Object> exports) {
-  exports->Set(String::NewSymbol("sign"),
-      FunctionTemplate::New(sign)->GetFunction());
+void Init(Local<Object> exports) {
+  exports->Set(Nan::New("sign").ToLocalChecked(),
+      Nan::New<v8::FunctionTemplate>(sign)->GetFunction());
 }
 
 NODE_MODULE(wmsigner, Init)
